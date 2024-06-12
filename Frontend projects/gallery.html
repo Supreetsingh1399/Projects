@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>photo gallery</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .heading{
+            text-align: center;
+            margin: 20px;
+            font-size: 3rem;
+            color: rgb(2, 2, 48);
+        }
+        .images-container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            margin: 10px;
+            padding: 60px;
+        }
+        .img{
+            opacity: 0.7;
+            height: 60vh;
+            border-radius: 20px;
+            border: 2px solid black;
+            width: 10%;
+            transition: all 3s;
+        }
+        .img:hover{
+            width: 50%;
+            opacity: 1;
+            transform: scale(.9);
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="heading">Hover on images to see it in full width</h1>
+    <div class="images-container"> 
+        <img class="img" src="Images/img-1.jpg" alt="img-2">
+        <img class="img" src="Images/img-2.jpeg" alt="img-3">
+        <img class="img" src="Images/img-3.png" alt="img-1">
+        <img class="img" src="Images/img-4.jpg" alt="img-4">
+        <img class="img" src="Images/img-5.jpg" alt="img-5">
+        <img class="img" src="Images/img-6.webp" alt="img-6">
+    </div>
+
+</body>
+
+</html>
