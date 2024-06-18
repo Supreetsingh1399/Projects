@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("mountain.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        #clock {
+            border-radius: 50%;
+            position: relative;
+            transform: translate(15%, 10%);
+            display: flex;
+        }
+        .center-dot {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: black;
+            position: absolute;
+            top: 54.6%;
+            /* left: 50%; */
+            transform: translate(150%, -40%);
+        }
+
+        .hands {
+            top: 55%;
+            position: absolute;
+            /* transform: translate(100%, 100%); */
+            transform-origin: 100%;
+        }
+
+        .hour {
+            width: 100px;
+            height: 10px;
+            border-radius: 22px;
+            background-color: rgb(134, 133, 133);
+        }
+
+        .minute {
+            width: 120px;
+            height: 8px;
+            border-radius: 22px;
+            background-color: rgb(139, 199, 220);
+        }
+
+        .second {
+            width: 140px;
+            height: 6px;
+            border-radius: 22px;
+            background-color: rgb(142, 139, 220);
+        }
+    </style>
+</head>
+
+<body>
+    <img id="clock" src="clock.png" alt="clock" height="400px">
+    <div class="hands hour"></div>
+    <div class="hands minute"></div>
+    <div class="hands second"></div>
+    <div class="center-dot"></div>
+    <script>
+        const hour = document.querySelector('.hour');
+        const minute = document.querySelector('.minute');
+        const second = document.querySelector('.second');
+        setInterval(() => {
+            let date = new Date();
+            let hr = (date.getHours() % 12 + date.getMinutes() / 60) * 30;
+            let min = (date.getMinutes() + date.getSeconds() / 60) * 6;
+            let sec = date.getSeconds() * 6;
+            hour.style.transform = `rotate(${hr + 90}deg)`;
+            minute.style.transform = `rotate(${min + 90}deg)`;
+            second.style.transform = `rotate(${sec + 90}deg)`;
+        }, 1000);
+    </script>
+</body>
+
+</html>
