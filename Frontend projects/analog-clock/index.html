@@ -26,56 +26,63 @@
         #clock {
             border-radius: 50%;
             position: relative;
-            transform: translate(15%, 10%);
-            display: flex;
+            /* transform: translate(15%, 10%); */
+            display: grid;
+            place-items: center;
         }
-        .center-dot {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: black;
-            position: absolute;
-            top: 54.6%;
-            /* left: 50%; */
-            transform: translate(150%, -40%);
-        }
-
         .hands {
-            top: 55%;
             position: absolute;
-            /* transform: translate(100%, 100%); */
-            transform-origin: 100%;
+            top: 49%;
+            left: 50%;
+            transform-origin: 0 0;
+
         }
 
         .hour {
             width: 100px;
             height: 10px;
-            border-radius: 22px;
+            border-radius: 70%;
             background-color: rgb(134, 133, 133);
         }
 
         .minute {
             width: 120px;
             height: 8px;
-            border-radius: 22px;
+            border-radius: 60%;
             background-color: rgb(139, 199, 220);
         }
 
         .second {
             width: 140px;
             height: 6px;
-            border-radius: 22px;
+            border-radius: 50%;
             background-color: rgb(142, 139, 220);
+        }
+        .container {
+           position: relative;
+        }
+        .center-dot {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-55%, -50%);
         }
     </style>
 </head>
 
 <body>
+    <div class="container">
     <img id="clock" src="clock.png" alt="clock" height="400px">
+
     <div class="hands hour"></div>
     <div class="hands minute"></div>
-    <div class="hands second"></div>
-    <div class="center-dot"></div>
+    <div class="hands second"></div> 
+</div>
+<div class="center-dot"></div>
     <script>
         const hour = document.querySelector('.hour');
         const minute = document.querySelector('.minute');
