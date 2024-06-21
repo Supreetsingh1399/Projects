@@ -28,61 +28,71 @@
             position: relative;
             /* transform: translate(15%, 10%); */
             display: grid;
-            place-items: center;    
+            place-items: center;
         }
+
         .hands {
             position: absolute;
-            top: 49%;
-            left: 50%;
-            transform-origin: 0 0;
-
+            bottom: 49%;
+            /* Adjust this value */
+            left: 20%;
+            /* Adjust this value */
+            transform-origin: 100% 50%;
         }
 
         .hour {
             width: 100px;
             height: 10px;
             border-radius: 70%;
-            background: linear-gradient(to right, rgb(131, 139, 186) 20%,rgb(217, 234, 240) 40% , rgb(125, 102, 145));
+            background: linear-gradient(to right, rgb(131, 139, 186) 20%, rgb(217, 234, 240) 40%, rgb(125, 102, 145));
+            margin-left: 28px;
         }
 
         .minute {
             width: 120px;
             height: 8px;
             border-radius: 60%;
-            background: linear-gradient(to right, black,gray, rgb(139, 199, 220)50%);
+            background: linear-gradient(to right, black, gray, rgb(139, 199, 220)50%);
+            /* margin-bottom: 10px;
+            margin-top: 10px; */
+            /* margin: 10px; */
+            margin-left: 2px;
         }
 
         .second {
+            margin-left: -20px;
             width: 140px;
             height: 6px;
             border-radius: 50%;
-            background: linear-gradient(to right, gray,rgb(196, 204, 223), rgb(142, 139, 220)50%);
+            background: linear-gradient(to right, gray, rgb(196, 204, 223), rgb(142, 139, 220)50%);
         }
+
         .container {
-           position: relative;
+            position: relative;
         }
+
         .center-dot {
             width: 30px;
             height: 30px;
             border-radius: 50%;
             background-color: black;
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-55%, -50%);
+            /* top: 50%; */
+            /* left: 53%; */
+            /* transform: translate(-55%, -50%); */
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-    <img id="clock" src="clock.png" alt="clock" height="400px">
+        <img id="clock" src="clock.png" alt="clock" height="400px">
 
-    <div class="hands hour"></div>
-    <div class="hands minute"></div>
-    <div class="hands second"></div> 
-</div>
-<div class="center-dot"></div>
+        <div class="hands hour"></div>
+        <div class="hands minute"></div>
+        <div class="hands second"></div>
+    </div>
+    <div class="center-dot"></div>
     <script>
         const hour = document.querySelector('.hour');
         const minute = document.querySelector('.minute');
