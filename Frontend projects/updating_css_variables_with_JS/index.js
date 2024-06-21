@@ -9,4 +9,5 @@ function handleUpdate(){
 }
 var inputs = document.querySelectorAll('.spacing, .Blur, .color');
 inputs.forEach(input => input.addEventListener('change', handleUpdate));
-inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+// inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+document.addEventListener('mousemove', handleUpdate);
